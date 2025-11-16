@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PaggMe - Gestão de Pagamentos para Eventos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&family=Roboto+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <!-- recoloração via mask: .logo-image usa logoPaggme.png como máscara e é preenchida pela variável --logo-color -->
+                <a href="#" class="logo-link" onclick="scrollToTop(event)">
+                    <div id="logo-image" class="logo-image" role="img" aria-label="PaggMe"></div>
+                    <!-- fallback para navegadores que não suportam mask-image -->
+                    <img src="logoPaggme.png" alt="PaggMe" class="logo-fallback" style="display:none;" />
+                    <span class="logo-text"><span class="logo-white">Pagg</span><span class="logo-green">me</span></span>
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="#funcionalidades">Funcionalidades</a>
+                <a href="#como-funciona">Como Funciona</a>
+                <a href="#precos">Preços</a>
+                <a href="#faq">FAQ</a>
+                <button class="btn btn-primary">Começar Grátis</button>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Alternar tema">
+                    <span id="theme-icon">🌙</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Gerencie pagamentos de eventos sem complicação</h1>
+                <p>Crie eventos, compartilhe links de pagamento e receba confirmações em tempo real via Pix. Ideal para igrejas, empresas e comunidades.</p>
+                <div class="hero-actions">
+                    <button class="btn btn-primary">Criar Meu Evento</button>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="carousel-container">
+                    <div class="carousel-slide">
+                        <div class="mockup-card">
+                            <h3>Churrasco da Empresa</h3>
+                            <div class="value">R$ 50,00</div>
+                            <p style="opacity: 0.9; margin-top: 8px;">20 participantes</p>
+                        </div>
+                        <div class="mockup-stats">
+                            <div class="stat-card">
+                                <div class="label">Confirmados</div>
+                                <div class="number">15</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="label">Arrecadado</div>
+                                <div class="number">R$ 750</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="mockup-card">
+                            <h3>Festa de Aniversário</h3>
+                            <div class="value">R$ 30,00</div>
+                            <p style="opacity: 0.9; margin-top: 8px;">35 convidados</p>
+                        </div>
+                        <div class="mockup-stats">
+                            <div class="stat-card">
+                                <div class="label">Confirmados</div>
+                                <div class="number">32</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="label">Arrecadado</div>
+                                <div class="number">R$ 960</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="mockup-card">
+                            <h3>Retiro Espiritual</h3>
+                            <div class="value">R$ 120,00</div>
+                            <p style="opacity: 0.9; margin-top: 8px;">60 inscritos</p>
+                        </div>
+                        <div class="mockup-stats">
+                            <div class="stat-card">
+                                <div class="label">Confirmados</div>
+                                <div class="number">52</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="label">Arrecadado</div>
+                                <div class="number">R$ 6.240</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="mockup-card">
+                            <h3>Campeonato de Futebol</h3>
+                            <div class="value">R$ 25,00</div>
+                            <p style="opacity: 0.9; margin-top: 8px;">40 times</p>
+                        </div>
+                        <div class="mockup-stats">
+                            <div class="stat-card">
+                                <div class="label">Confirmados</div>
+                                <div class="number">38</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="label">Arrecadado</div>
+                                <div class="number">R$ 950</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-arrow prev" onclick="prevSlide()" aria-label="Evento anterior">◀</button>
+                <button class="carousel-arrow next" onclick="nextSlide()" aria-label="Próximo evento">▶</button>
+                <div class="carousel-dots">
+                    <span class="dot active" onclick="goToSlide(0)"></span>
+                    <span class="dot" onclick="goToSlide(1)"></span>
+                    <span class="dot" onclick="goToSlide(2)"></span>
+                    <span class="dot" onclick="goToSlide(3)"></span>
+                </div>
+            </div>
+        </section>
+
+        <section class="features" id="funcionalidades">
+            <div class="section-title">
+                <h2>Tudo que você precisa em um só lugar</h2>
+                <p>Ferramentas profissionais para gerenciar seus eventos com facilidade</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                        <h3>Pagamento Instantâneo</h3>
+                        <p>Pix dinâmico com confirmação automática em segundos. Seus participantes pagam e já estão confirmados.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔗</div>
+                    <h3>Link Personalizado</h3>
+                    <p>Crie um evento e compartilhe o link de pagamento por WhatsApp, email ou redes sociais.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Dashboard em Tempo Real</h3>
+                    <p>Acompanhe confirmações, receita e status de pagamentos ao vivo, de qualquer lugar.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Transparência Total</h3>
+                    <p>Taxas claras e sem surpresas. Você e seus participantes sabem exatamente quanto vão pagar.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Mobile-First</h3>
+                    <p>Interface otimizada para celular. Gerencie seus eventos de onde estiver.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📄</div>
+                    <h3>Relatórios Completos</h3>
+                    <p>Exporte listas de participantes e resumos financeiros em PDF ou CSV.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="how-it-works" id="como-funciona">
+            <div class="section-title">
+                <h2>Como Funciona</h2>
+                <p>Em 3 passos simples, seu evento está pronto</p>
+            </div>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Crie o Evento</h3>
+                        <p>Cadastre o nome, valor por pessoa, número de vagas, data e local. Leva menos de 2 minutos.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Compartilhe o Link</h3>
+                        <p>Copie o link de pagamento e envie para seus convidados por WhatsApp, email ou qualquer canal.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Receba e Acompanhe</h3>
+                        <p>Os participantes pagam via Pix e são confirmados automaticamente. Você acompanha tudo em tempo real.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="pricing" id="precos">
+            <div class="section-title">
+                <h2>Planos Transparentes</h2>
+                <p>Comece grátis e evolua conforme cresce</p>
+            </div>
+            <div class="pricing-cards">
+                <div class="pricing-card">
+                    <span class="plan-badge">Gratuito</span>
+                    <h3 class="plan-name">Plano Free</h3>
+                    <div class="plan-price">R$ 0<span>/mês</span></div>
+                    <p style="color: var(--text-secondary); margin-bottom: 24px;">Perfeito para começar</p>
+                    <ul class="plan-features">
+                        <li>Até 2 eventos simultâneos</li>
+                        <li>Pagamento Pix automatizado</li>
+                        <li>Dashboard básico</li>
+                        <li>Relatórios em CSV</li>
+                        <li>Taxa: R$ 0,50 por confirmação</li>
+                    </ul>
+                    <button class="btn btn-ghost" style="width: 100%;">Começar Grátis</button>
+                </div>
+                <div class="pricing-card featured">
+                    <span class="plan-badge" style="background: var(--primary-700); color: white;">Recomendado</span>
+                    <h3 class="plan-name">Plano Pro</h3>
+                    <div class="plan-price">R$ 29,90<span>/mês</span></div>
+                    <p style="color: var(--text-secondary); margin-bottom: 24px;">Para organizadores frequentes</p>
+                    <ul class="plan-features">
+                        <li>Eventos ilimitados</li>
+                        <li>Pagamento Pix automatizado</li>
+                        <li>Relatórios avançados em PDF</li>
+                        <li>Personalização (logo e cores)</li>
+                        <li>Suporte prioritário</li>
+                        <li>Taxa: R$ 0,50 por confirmação</li>
+                    </ul>
+                    <button class="btn btn-primary" style="width: 100%;">Assinar Agora</button>
+                </div>
+            </div>
+            <p style="text-align: center; color: var(--text-secondary); margin-top: 32px; font-size: 14px;">
+                * Taxa de conveniência de R$ 0,50 é cobrada apenas após pagamento confirmado
+            </p>
+        </section>
+
+        <!-- Perguntas Frequentes (FAQ) -->
+        <section class="faq" id="faq">
+            <div class="section-title">
+                <h2>Perguntas Frequentes</h2>
+                <p>Dúvidas comuns respondidas de forma rápida</p>
+            </div>
+            <div class="faq-list">
+                <details class="faq-item">
+                    <summary>Como funciona a cobrança via Pix?</summary>
+                    <p>Quando um participante realiza o pagamento via Pix, o sistema recebe uma confirmação automática e marca a inscrição como confirmada. A taxa de conveniência é cobrada somente após a confirmação.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Posso criar vários eventos ao mesmo tempo?</summary>
+                    <p>Sim. No Plano Pro você pode criar eventos ilimitados. No Plano Free há um limite de até 2 eventos simultâneos.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Como compartilho o link de pagamento?</summary>
+                    <p>Após criar o evento, você pode copiar o link de pagamento e compartilhar por WhatsApp, email ou redes sociais.</p>
+                </details>
+                <details class="faq-item faq-hidden">
+                    <summary>Preciso cadastrar os participantes antes de criar o evento?</summary>
+                    <p>Não! Você só precisa definir título, descrição, prazo e valor. Ao publicar, o sistema gera um link que você compartilha e cada pessoa se inscreve e paga diretamente pelo link.</p>
+                </details>
+                <details class="faq-item faq-hidden">
+                    <summary>Como funciona a divisão automática no Racha?</summary>
+                    <p>No Racha, você cadastra os itens/custos (ex.: churrasco, bebidas, aluguel) e escolhe a regra de divisão: igual para todos, por percentual, pesos/consumo ou taxas específicas. O app calcula automaticamente quanto cada um deve pagar.</p>
+                </details>
+                <details class="faq-item faq-hidden">
+                    <summary>Qual a diferença entre Evento, Vaquinha e Racha?</summary>
+                    <p>Evento tem valor fixo por pessoa. Vaquinha define uma meta total e valor sugerido (opcional). Racha divide custos específicos entre participantes conforme regras personalizadas de divisão.</p>
+                </details>
+                <details class="faq-item faq-hidden">
+                    <summary>Os participantes precisam enviar comprovante de pagamento?</summary>
+                    <p>Não! O pagamento via Pix dinâmico é confirmado automaticamente via webhook. Assim que o participante paga, o status muda para Confirmado em tempo real, sem necessidade de enviar comprovante.</p>
+                </details>
+                <details class="faq-item faq-hidden">
+                    <summary>Como acompanho quem já pagou?</summary>
+                    <p>No dashboard você vê em tempo real a lista completa de quem pagou, o progresso da meta (vaquinha), quem ainda falta pagar (racha) e o total arrecadado. Tudo atualiza automaticamente.</p>
+                </details>
+                <details class="faq-item faq-hidden">
+                    <summary>Posso encerrar a cobrança antes do prazo?</summary>
+                    <p>Sim! Você pode fechar a cobrança a qualquer momento. Após o encerramento, é possível exportar relatórios completos com lista de pagadores e resumo financeiro em CSV ou PDF.</p>
+                </details>
+                <details class="faq-item faq-hidden">
+                    <summary>Como eu exporto relatórios?</summary>
+                    <p>Nos relatórios você pode exportar em CSV (todos os planos) ou PDF (Plano Pro) a lista de participantes e um resumo financeiro detalhado com valores e taxas.</p>
+                </details>
+            </div>
+            <div class="faq-toggle-container">
+                <button class="btn btn-ghost" id="faq-toggle-btn" onclick="toggleFAQ()">
+                    Mostrar Mais Perguntas
+                </button>
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="cta-box">
+                <h2>Pronto para simplificar seus eventos?</h2>
+                <p>Junte-se a centenas de organizadores que já confiam no PaggMe</p>
+                <button class="btn">Criar Conta Gratuita</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Sócios -->
+    <section class="team" id="socios">
+        <div class="section-title">
+            <h2>Quem Somos</h2>
+            <p>Conheça os sócios por trás do PaggMe</p>
+        </div>
+        <div class="team-grid">
+            <div class="partner-card">
+                <img src="https://media.licdn.com/dms/image/v2/D4D03AQGxvJvKXgJhtg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1708110930543?e=1764201600&v=beta&t=No3HWaxOEi6wrt0LV5bOa5YpXV5Us5VH7ak-MWTtUao" alt="Foto do Sócio 1">
+                <h3>Débora Block</h3>
+                <p>Chief Project Officer</p>
+            </div>
+            <div class="partner-card">
+                <img src="https://media.licdn.com/dms/image/v2/D4D03AQHfCsdexLdO0A/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1682550970087?e=1764201600&v=beta&t=4tA2e9ISQMQ01mf50XM2nYRBs63EGZnFokuZTnHFrGU" alt="Foto do Sócio 2">
+                <h3>Douglas Mello</h3>
+                <p>Chief Executive Officer</p>
+            </div>
+            <div class="partner-card">
+                <img src="https://media.licdn.com/dms/image/v2/D4D03AQFXxe9U1kK8lQ/profile-displayphoto-crop_800_800/B4DZfTFwxVGgAI-/0/1751593193257?e=1764201600&v=beta&t=KaoNz4nYZyTtwluIfTmpXRZhl_CArnfO4H11FS7dvCc" alt="Foto do Sócio 3">
+                <h3>Edyo Campos</h3>
+                <p>Chief Technology Officer</p>
+            </div>
+            <div class="partner-card">
+                <img src="https://media.licdn.com/dms/image/v2/D4D03AQHGEKmpiNit5Q/profile-displayphoto-scale_200_200/B4DZpVSF_vIEAc-/0/1762367398413?e=1764201600&v=beta&t=8saGO1VKDNpBmRh570kywy3s6Z-ngo4KrNP1jQ9EZLE" alt="Foto do Sócio 4">
+                <h3>Henrique Correa</h3>
+                <p>Chief Operating Officer</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div>
+                <div class="footer-brand">Paggme</div>
+                <p class="footer-brand-desc">
+                    Plataforma completa para gestão de pagamentos em eventos comunitários. Simples, rápido e transparente.
+                </p>
+            </div>
+            <div class="footer-links">
+                <h4>Produto</h4>
+                <ul>
+                    <li><a href="#funcionalidades">Funcionalidades</a></li>
+                    <li><a href="#precos">Preços</a></li>
+                    <li><a href="#">Integrações</a></li>
+                    <li><a href="#">Casos de Uso</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Empresa</h4>
+                <ul>
+                    <li><a href="#">Sobre Nós</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Carreiras</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Termos de Uso</a></li>
+                    <li><a href="#">Privacidade</a></li>
+                    <li><a href="#">Segurança</a></li>
+                    <li><a href="#">LGPD</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 PaggMe. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
