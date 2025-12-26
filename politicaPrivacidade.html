@@ -1,0 +1,262 @@
+```html
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Política de Privacidade — Bibliotech</title>
+  <meta name="description" content="Política de Privacidade do app Bibliotech." />
+
+  <style>
+    :root{
+      --bg:#F8F9FA;
+      --card:#FFFFFF;
+      --text:#2D3436;
+      --muted:#636E72;
+      --border:#E0E0E0;
+      --primary:#F3D00F;
+      --secondary:#4E8CFF;
+      --radius:12px;
+    }
+
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    header{
+      background: linear-gradient(180deg, rgba(243,208,15,.25), rgba(243,208,15,0));
+      padding: 32px 16px 8px;
+    }
+
+    .wrap{
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 0 16px 40px;
+    }
+
+    .title{
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+      margin:0;
+    }
+
+    h1{
+      font-size: 28px;
+      margin:0;
+      letter-spacing:-0.2px;
+    }
+
+    .subtitle{
+      color: var(--muted);
+      margin:0;
+      font-size: 14px;
+    }
+
+    .card{
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      padding: 18px;
+      margin-top: 16px;
+    }
+
+    h2{
+      font-size: 18px;
+      margin:0 0 10px;
+    }
+
+    p{ margin: 0 0 10px; }
+    ul{ margin: 0 0 10px 18px; }
+    li{ margin: 6px 0; }
+
+    .chip{
+      display:inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(78,140,255,.12);
+      color: #1f4fbf;
+      font-size: 12px;
+      margin-right: 6px;
+      border: 1px solid rgba(78,140,255,.25);
+      vertical-align: middle;
+    }
+
+    .note{
+      border-left: 4px solid var(--primary);
+      padding: 10px 12px;
+      background: rgba(243,208,15,.18);
+      border-radius: 10px;
+      color: var(--text);
+    }
+
+    a{
+      color: #1f4fbf;
+      text-decoration: none;
+    }
+    a:hover{ text-decoration: underline; }
+
+    footer{
+      color: var(--muted);
+      font-size: 13px;
+      padding-top: 14px;
+    }
+
+    @media (max-width: 520px){
+      h1{ font-size: 22px; }
+      .card{ padding: 14px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="wrap">
+      <div class="title">
+        <h1>Política de Privacidade — Bibliotech</h1>
+        <p class="subtitle">
+          <span class="chip">LGPD</span>
+          Última atualização: <strong>26/12/2025</strong>
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="card">
+      <p>
+        O <strong>Bibliotech</strong> é um app de portfólio para organizar e compartilhar sua biblioteca de livros.
+        Esta Política descreve, de forma simples, como tratamos informações ao usar o aplicativo.
+      </p>
+    </section>
+
+    <section class="card" id="responsavel">
+      <h2>1) Responsável pelo tratamento</h2>
+      <p><strong>App:</strong> Bibliotech</p>
+      <p><strong>Contato:</strong> <a href="mailto:bibliotechdosdev@gmail.com">bibliotechdosdev@gmail.com</a></p>
+      <p class="note">
+        Não possuímos CNPJ, pois o Bibliotech é um app de portfólio.
+      </p>
+    </section>
+
+    <section class="card" id="dados">
+      <h2>2) Quais dados coletamos</h2>
+      <p>O Bibliotech <strong>não utiliza login com Google</strong> no momento.</p>
+      <p>
+        Nós <strong>não solicitamos dados sensíveis</strong> (ex.: saúde, biometria, religião, orientação sexual,
+        dados financeiros).
+      </p>
+
+      <p><strong>a) Dados informados por você</strong></p>
+      <ul>
+        <li>Informações do perfil que você escolher preencher (ex.: nome/apelido, foto, bio).</li>
+        <li>Dados da sua biblioteca: livros cadastrados, status de leitura, avaliações, notas, categorias e preferências.</li>
+        <li>Configurações de privacidade: biblioteca pública/privada e livros públicos/privados.</li>
+      </ul>
+
+      <p><strong>b) Dados técnicos (automáticos)</strong></p>
+      <ul>
+        <li>Informações básicas do dispositivo e do app (ex.: versão do sistema, versão do app, idioma) e registros de erro para corrigir falhas.</li>
+        <li>Endereço IP e dados de conexão podem aparecer em logs do serviço de hospedagem/infraestrutura.</li>
+      </ul>
+    </section>
+
+    <section class="card" id="visibilidade">
+      <h2>3) Como funciona a visibilidade da biblioteca</h2>
+      <ul>
+        <li><strong>Biblioteca privada:</strong> apenas você visualiza.</li>
+        <li><strong>Biblioteca pública:</strong> outros usuários podem visualizar sua biblioteca conforme o app permitir.</li>
+        <li><strong>Biblioteca pública com livros privados:</strong> sua biblioteca pode estar pública, mas
+          <strong>livros marcados como privados não devem aparecer</strong> para outras pessoas.</li>
+      </ul>
+      <p class="note">Você pode ajustar essas configurações a qualquer momento dentro do app (quando disponível).</p>
+    </section>
+
+    <section class="card" id="finalidades">
+      <h2>4) Para que usamos os dados</h2>
+      <ul>
+        <li>Manter o funcionamento do app e salvar sua biblioteca.</li>
+        <li>Exibir e aplicar corretamente suas configurações de privacidade.</li>
+        <li>Melhorar desempenho, corrigir bugs e aumentar a segurança.</li>
+        <li>Responder solicitações enviadas ao nosso e-mail.</li>
+      </ul>
+    </section>
+
+    <section class="card" id="compartilhamento">
+      <h2>5) Compartilhamento de dados</h2>
+      <ul>
+        <li><strong>Não vendemos</strong> dados pessoais.</li>
+        <li>
+          Podemos compartilhar dados <strong>somente com provedores de tecnologia</strong> necessários para operar o app
+          (ex.: hospedagem, banco de dados, armazenamento e logs de erro).
+        </li>
+        <li>Podemos divulgar informações se houver obrigação legal ou para proteger direitos e segurança do Bibliotech e de usuários.</li>
+      </ul>
+    </section>
+
+    <section class="card" id="retencao">
+      <h2>6) Armazenamento e retenção</h2>
+      <ul>
+        <li>Mantemos os dados enquanto forem necessários para as finalidades descritas nesta Política.</li>
+        <li>
+          Você pode solicitar <strong>exclusão</strong> de dados/conta (quando aplicável) pelo e-mail
+          <a href="mailto:bibliotechdosdev@gmail.com">bibliotechdosdev@gmail.com</a>.
+          Faremos o possível para remover, respeitando limitações técnicas e obrigações legais.
+        </li>
+      </ul>
+    </section>
+
+    <section class="card" id="seguranca">
+      <h2>7) Segurança</h2>
+      <p>
+        Adotamos boas práticas de segurança (ex.: controle de acesso e proteção de dados em trânsito quando aplicável).
+        Mesmo assim, nenhum sistema é totalmente livre de riscos.
+      </p>
+    </section>
+
+    <section class="card" id="menores">
+      <h2>8) Menores de idade</h2>
+      <p>O Bibliotech pode ser usado por <strong>leitores de todas as idades</strong>.</p>
+      <p>
+        Como não coletamos dados sensíveis, o app pode ser utilizado por menores, mas recomendamos
+        <strong>acompanhamento de um responsável</strong> para crianças.
+      </p>
+      <p>
+        Se um responsável identificar conteúdo ou informação que deva ser removida, pode solicitar pelo e-mail
+        <a href="mailto:bibliotechdosdev@gmail.com">bibliotechdosdev@gmail.com</a>.
+      </p>
+    </section>
+
+    <section class="card" id="direitos">
+      <h2>9) Seus direitos (LGPD)</h2>
+      <p>Você pode solicitar:</p>
+      <ul>
+        <li>Acesso aos seus dados, correção e exclusão (quando aplicável).</li>
+        <li>Informações sobre como seus dados são tratados.</li>
+      </ul>
+      <p>
+        Contato: <a href="mailto:bibliotechdosdev@gmail.com">bibliotechdosdev@gmail.com</a>
+      </p>
+    </section>
+
+    <section class="card" id="alteracoes">
+      <h2>10) Alterações nesta Política</h2>
+      <p>
+        Podemos atualizar esta Política periodicamente. Sempre indicaremos a data de “Última atualização” no início do documento.
+      </p>
+
+      <footer>
+        <p>© Bibliotech — Política de Privacidade</p>
+      </footer>
+    </section>
+  </main>
+</body>
+</html>
+```
+ 
