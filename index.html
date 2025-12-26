@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="pt-BR" data-theme="light">
 <head>
     <meta charset="UTF-8">
@@ -372,4 +372,228 @@
 
     <script src="script.js"></script>
 </body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PaggMe - Gestão de Pagamentos para Eventos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&family=Roboto+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="#" class="logo-link" onclick="scrollToTop(event)">
+                    <div id="logo-image" class="logo-image" role="img" aria-label="PaggMe"></div>
+                    <img src="logoPaggme.png" alt="PaggMe" class="logo-fallback" style="display:none;" />
+                    <span class="logo-text"><span class="logo-white">Pagg</span><span class="logo-green">me</span></span>
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="#funcionalidades">Funcionalidades</a>
+                <a href="#como-funciona">Como Funciona</a>
+                <a href="#precos">Preços</a>
+                <a href="#faq">FAQ</a>
+                <button class="btn btn-primary">Começar Grátis</button>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Alternar tema">
+                    <span id="theme-icon">🌙</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ... SEU CONTEÚDO INALTERADO ... -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Gerencie pagamentos de eventos sem complicação</h1>
+                <p>Crie eventos, compartilhe links de pagamento e receba confirmações em tempo real via Pix. Ideal para igrejas, empresas e comunidades.</p>
+                <div class="hero-actions">
+                    <button class="btn btn-primary">Criar Meu Evento</button>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="carousel-container">
+                    <div class="carousel-slide">
+                        <div class="mockup-card">
+                            <h3>Churrasco da Empresa</h3>
+                            <div class="value">R$ 50,00</div>
+                            <p style="opacity: 0.9; margin-top: 8px;">20 participantes</p>
+                        </div>
+                        <div class="mockup-stats">
+                            <div class="stat-card">
+                                <div class="label">Confirmados</div>
+                                <div class="number">15</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="label">Arrecadado</div>
+                                <div class="number">R$ 750</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="mockup-card">
+                            <h3>Festa de Aniversário</h3>
+                            <div class="value">R$ 30,00</div>
+                            <p style="opacity: 0.9; margin-top: 8px;">35 convidados</p>
+                        </div>
+                        <div class="mockup-stats">
+                            <div class="stat-card">
+                                <div class="label">Confirmados</div>
+                                <div class="number">32</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="label">Arrecadado</div>
+                                <div class="number">R$ 960</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="mockup-card">
+                            <h3>Retiro Espiritual</h3>
+                            <div class="value">R$ 120,00</div>
+                            <p style="opacity: 0.9; margin-top: 8px;">60 inscritos</p>
+                        </div>
+                        <div class="mockup-stats">
+                            <div class="stat-card">
+                                <div class="label">Confirmados</div>
+                                <div class="number">52</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="label">Arrecadado</div>
+                                <div class="number">R$ 6.240</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="mockup-card">
+                            <h3>Campeonato de Futebol</h3>
+                            <div class="value">R$ 25,00</div>
+                            <p style="opacity: 0.9; margin-top: 8px;">40 times</p>
+                        </div>
+                        <div class="mockup-stats">
+                            <div class="stat-card">
+                                <div class="label">Confirmados</div>
+                                <div class="number">38</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="label">Arrecadado</div>
+                                <div class="number">R$ 950</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-arrow prev" onclick="prevSlide()" aria-label="Evento anterior">◀</button>
+                <button class="carousel-arrow next" onclick="nextSlide()" aria-label="Próximo evento">▶</button>
+                <div class="carousel-dots">
+                    <span class="dot active" onclick="goToSlide(0)"></span>
+                    <span class="dot" onclick="goToSlide(1)"></span>
+                    <span class="dot" onclick="goToSlide(2)"></span>
+                    <span class="dot" onclick="goToSlide(3)"></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ... RESTANTE INALTERADO ... -->
+
+    </main>
+
+    <!-- Sócios -->
+    <section class="team" id="socios">
+        <div class="section-title">
+            <h2>Quem Somos</h2>
+            <p>Conheça os sócios por trás do PaggMe</p>
+        </div>
+        <div class="team-grid">
+            <div class="partner-card">
+                <img src="assets/images/socios/debora.jpg" alt="Foto do Sócio 1">
+                <h3>Débora Block</h3>
+                <p>Chief Project Officer</p>
+            </div>
+            <div class="partner-card">
+                <img src="assets/images/socios/douglas.jpg" alt="Foto do Sócio 2">
+                <h3>Douglas Mello</h3>
+                <p>Chief Executive Officer</p>
+            </div>
+            <div class="partner-card">
+                <img src="assets/images/socios/edyo.jpg" alt="Foto do Sócio 3">
+                <h3>Edyo Campos</h3>
+                <p>Chief Technology Officer</p>
+            </div>
+            <div class="partner-card">
+                <img src="assets/images/socios/henrique.jpg" alt="Foto do Sócio 4">
+                <h3>Henrique Correa</h3>
+                <p>Chief Operating Officer</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div>
+                <div class="footer-brand">Paggme</div>
+                <p class="footer-brand-desc">
+                    Plataforma completa para gestão de pagamentos em eventos comunitários. Simples, rápido e transparente.
+                </p>
+            </div>
+            <div class="footer-links">
+                <h4>Produto</h4>
+                <ul>
+                    <li><a href="#funcionalidades">Funcionalidades</a></li>
+                    <li><a href="#precos">Preços</a></li>
+                    <li><a href="#">Integrações</a></li>
+                    <li><a href="#">Casos de Uso</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Empresa</h4>
+                <ul>
+                    <li><a href="#">Sobre Nós</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Carreiras</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </div>
+
+            <!-- ✅ AJUSTE AQUI: links reais de legal -->
+            <div class="footer-links">
+                <h4>Legal</h4>
+                <ul>
+                    <!-- Se você tiver termos, crie o arquivo termos.html e aponte aqui -->
+                    <li>
+                      <a href="/termos-de-uso.html" target="_blank" rel="noopener noreferrer">
+                        Termos de Uso
+                      </a>
+                    </li>
+
+                    <!-- ✅ Política fora do index e acessível só via link -->
+                    <li>
+                      <a href="/politica-privacidade-9f3a2d7b.html" target="_blank" rel="noopener noreferrer">
+                        Privacidade
+                      </a>
+                    </li>
+
+                    <li><a href="#">Segurança</a></li>
+                    <li><a href="#">LGPD</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 PaggMe. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
 </html>
+
+  -->
