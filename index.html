@@ -11,27 +11,24 @@
 </head>
 <body>
     <header>
-        <nav>
-            <div class="logo">
-                <!-- recoloração via mask: .logo-image usa logoPaggme.png como máscara e é preenchida pela variável --logo-color -->
+           <nav>
+              <div class="logo">
                 <a href="#" class="logo-link" onclick="scrollToTop(event)">
-                    <div id="logo-image" class="logo-image" role="img" aria-label="PaggMe"></div>
-                    <!-- fallback para navegadores que não suportam mask-image -->
-                    <img src="logoPaggme.png" alt="PaggMe" class="logo-fallback" style="display:none;" />
-                    <span class="logo-text"><span class="logo-white">Pagg</span><span class="logo-green">me</span></span>
+                  <div id="logo-image" class="logo-image" role="img" aria-label="PaggMe"></div>
+                  <img src="logoPaggme.png" alt="PaggMe" class="logo-fallback" style="display:none;" />
+                  <span class="logo-text"><span class="logo-white">Pagg</span><span class="logo-green">me</span></span>
                 </a>
-            </div>
-            <div class="nav-links">
-                <a href="#funcionalidades">Funcionalidades</a>
-                <a href="#como-funciona">Como Funciona</a>
-                <a href="#precos">Preços</a>
-                <a href="#faq">FAQ</a>
-                <button class="btn btn-primary">Começar Grátis</button>
-                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Alternar tema">
-                    <span id="theme-icon">🌙</span>
-                </button>
-            </div>
-        </nav>
+              </div>
+            
+              <!-- ✅ NOVO: botão mobile -->
+              <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" onclick="toggleMenu(this)">
+                <span></span><span></span><span></span>
+              </button>
+            
+              <div class="nav-links" id="nav-links">
+                <!-- seus links e botões -->
+              </div>
+          </nav>
     </header>
 
     <main>
