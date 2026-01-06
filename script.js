@@ -1,35 +1,36 @@
 // Theme Toggle
-function toggleMenu(btn) {
+function toggleTheme() {
   const root = document.documentElement;
-  const isOpen = root.classList.toggle("nav-open");
-  btn?.setAttribute("aria-expanded", String(isOpen));
-  document.body.style.overflow = isOpen ? "hidden" : "";
+  const currentTheme = root.getAttribute("data-theme");
+  const newTheme = currentTheme === "dark" ? "light" : "dark";
+  const icon = document.getElementById("theme-icon");
+
+  root.setAttribute("data-theme", newTheme);
+  localStorage.setItem("paggme-theme", newTheme);
+  icon.textContent = newTheme === "dark" ? "☀️" : "🌙";
 }
 
-// fecha ao clicar em um link (melhor UX)
-document.addEventListener("click", (e) => {
-  const a = e.target.closest("#nav-links a");
-  if (!a) return;
+// Load saved theme
+window.addEventListener("DOMContentLoaded", () => {
+  const savedTheme = localStorage.getItem("paggme-theme");
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const theme = savedTheme || (prefersDark ? "dark" : "light");
+  const icon = document.getElementById("theme-icon");
 
-  if (document.documentElement.classList.contains("nav-open")) {
-    document.documentElement.classList.remove("nav-open");
-    document.body.style.overflow = "";
-    const btn = document.querySelector(".nav-toggle");
-    btn?.setAttribute("aria-expanded", "false");
-  }
+  document.documentElement.setAttribute("data-theme", theme);
+  icon.textContent = theme === "dark" ? "☀️" : "🌙";
 });
 
-// fecha com ESC
-document.addEventListener("keydown", (e) => {
-  if (e.key !== "Escape") return;
-  if (!document.documentElement.classList.contains("nav-open")) return;
-
-  document.documentElement.classList.remove("nav-open");
-  document.body.style.overflow = "";
-  const btn = document.querySelector(".nav-toggle");
-  btn?.setAttribute("aria-expanded", "false");
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute("href"));
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  });
 });
-
 
 // Logo helpers
 // setLogoColor('#ff6600') altera a variável CSS --logo-color
